@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Page</title>
+    <style>
+        /* Style to make the star pointer */
+        .star {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: green;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        /* Style for the chat modal */
+        #chatModal {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style for the chat button */
+        #openChatButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Style for the logout button */
+        #logoutButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ffcc00;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Function to show the chat modal
+        function showChatModal() {
+            document.getElementById('chatModal').style.display = 'block';
+        }
+
+        // Function to open webchat2.html
+        function openWebChat() {
+            window.location.href = 'webchat2.html';
+        }
+
+        // Function to log out
+        function logout() {
+            window.location.href = 'logon.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="star" onclick="showChatModal()"></div>
+
+    <!-- Chat button -->
+    <button id="openChatButton" onclick="showChatModal()">Chat with a BOT?</button>
+
+    <!-- Logout button -->
+    <button id="logoutButton" onclick="logout()">Logout</button>
+
+    <!-- Chat modal -->
+    <div id="chatModal">
+        <p>Would you like to chat with a BOT?</p>
+        <button onclick="openWebChat()">Yes</button>
+        <button onclick="document.getElementById('chatModal').style.display = 'none'">No</button>
+    </div>
+
+    <h1>Are you a Robot? Click the Yellow Star if you are human.</h1>
+</body>
+</html>
